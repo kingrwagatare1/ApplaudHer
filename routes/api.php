@@ -19,3 +19,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 Route::POST('save_category',[\App\Http\Controllers\Category\categoryController::class,'save_category']);
 Route::POST('register_cooperative',[\App\Http\Controllers\Cooperative\cooperativeController::class,'register_cooperative']);
+Route::POST('register_User',[\App\Http\Controllers\Auth\registerController::class,'register_User']);
+Route::POST('login_User',[\App\Http\Controllers\Auth\loginController::class,'login_User']);
+Route::middleware('auth:sanctum')->post('logout',[\App\Http\Controllers\Auth\loginController::class,'logout']);
