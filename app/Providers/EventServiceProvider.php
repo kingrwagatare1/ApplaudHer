@@ -27,7 +27,8 @@ class EventServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        
+      //  event(new Registered($user));
     }
 
     /**
