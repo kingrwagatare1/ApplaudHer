@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Cooperative extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'cooperativeName',
+        'workPermit',
+
+    ];
 }

@@ -5,16 +5,15 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Project extends Model
+class Project_reviews extends Model
 {
     use HasFactory;
-
+    
     protected $fillable = [
-        'projectName',
-        'categoryId',
-        'details',
-        'participantId',
-        'budget',
+        'projectreviewId',
+        'reviews',
+        'stars',
+        
 
 
 
