@@ -10,7 +10,7 @@ class Participant extends Model
     use HasFactory;
 
     protected $fillable = [
-        'userId',
+        'user_Id',
         'description',
         'cooperative_id',
 

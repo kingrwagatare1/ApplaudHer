@@ -23,11 +23,17 @@ Route::POST('register_cooperative',[\App\Http\Controllers\Cooperative\cooperativ
 Route::POST('register_User',[\App\Http\Controllers\Auth\registerController::class,'register_User']);
 Route::POST('login_User',[\App\Http\Controllers\Auth\loginController::class,'login_User']);
 Route::middleware('auth:sanctum')->post('logout',[\App\Http\Controllers\Auth\loginController::class,'logout']);
-//     //email notice
-// Route::get('/email/verify', function () { return view('auth.verify-email');})->middleware('auth')->name('verification.notice');
-//      //email handler
-// Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $request) {
-//         $request->fulfill();
-     
-//         return redirect('/login');
-//     })->middleware(['auth', 'signed'])->name('verification.verify');
+Route::POST('register_role',[\App\Http\Controllers\Role\roleController::class,'register_role']);
+      //CRUD For Projects
+Route::POST('save_project',[\App\Http\Controllers\Project\projectController::class,'save_project']);
+Route::GET('/save_project',[\App\Http\Controllers\Project\projectController::class,'index']);
+Route::get('/save_project/{id}', [\App\Http\Controllers\Project\projectController::class,'show']);
+Route::PATCH('/save_project/{id}',[\App\Http\Controllers\Project\projectController::class,'update']);
+Route::delete('/save_project/{id}',[\App\Http\Controllers\Project\projectController::class,'delete']);
+
+    //CRUD For Participants
+Route::POST('save_participant',[\App\Http\Controllers\Paticipant\participantController::class,'save_participant']);
+Route::GET('/save_participant',[\App\Http\Controllers\Paticipant\participantController::class,'index']);
+Route::get('/save_participant/{id}', [\App\Http\Controllers\Paticipant\participantController::class,'show']);
+Route::PATCH('/save_participant/{id}',[\App\Http\Controllers\Paticipant\participantController::class,'update']);
+Route::delete('/save_participant/{id}',[\App\Http\Controllers\Paticipant\participantController::class,'delete']);

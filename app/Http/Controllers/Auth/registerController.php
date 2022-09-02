@@ -19,7 +19,11 @@ class registerController extends Controller
             'address' => $request['address'],
             'phone_number' => $request['phone_number'],
             'password'=> Hash::make($request['password']),
+            'roleId' =>$request['roleId'],
         ])->save();
+
+        //event(new registered($user));
+        
         return response()->json('User registered successfully');
     }
 }

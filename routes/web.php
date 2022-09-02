@@ -16,3 +16,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+//     //email notice
+// Route::get('/email/verify', function () { return view('auth.verify-email');})->middleware('auth')->name('verification.notice');
+//      //email handler
+// Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $request) {
+//         $request->fulfill();
+     
+//         return redirect('/login');
+//     })->middleware(['auth', 'signed'])->name('verification.verify');

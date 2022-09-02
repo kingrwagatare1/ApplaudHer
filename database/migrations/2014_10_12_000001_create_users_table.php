@@ -20,10 +20,10 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->string('phone_number');
             $table->string('address');
-            //$table->string('role');
+            $table->unsignedBigInteger('roleId');
+            $table->foreign('roleId')->references('id')->on('roles')->cascadeOnUpdate()->cascadeOnDelete();
             $table->string('password');
             $table->timestamp('email_verified_at')->nullable();  
-           // $table->integer('roleId');
             $table->rememberToken();
             $table->timestamps();
         });
